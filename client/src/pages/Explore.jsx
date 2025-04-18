@@ -1,27 +1,7 @@
 import { useState } from 'react';
-import {
-  Box,
-  Container,
-  Typography,
-  Grid,
-  Card,
-  CardContent,
-  Chip,
-  TextField,
-  InputAdornment,
-  IconButton,
-  Tabs,
-  Tab,
-  useTheme,
-} from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
-import TuneIcon from '@mui/icons-material/Tune';
-import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
-import NewReleasesIcon from '@mui/icons-material/NewReleases';
-import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import { Search, Sliders, Flame, Sparkles, TrendingUp } from 'lucide-react';
 
 const Explore = () => {
-  const theme = useTheme();
   const [activeTab, setActiveTab] = useState(0);
 
   const trendingSearches = [
@@ -33,182 +13,124 @@ const Explore = () => {
     {
       title: 'Smart Cooling Solutions',
       description: 'Wi-Fi enabled ACs with advanced features',
-      image: 'https://m.media-amazon.com/images/I/61oKf-bQzPL._SL1500_.jpg',
+      image: 'https://4.imimg.com/data4/WM/BQ/MY-6515166/wall-moutned-air-conditioner-500x500.jpg',
       tags: ['Smart', 'Trending']
     },
     {
       title: 'Premium Fans',
       description: 'Elegant ceiling fans with modern designs',
-      image: 'https://m.media-amazon.com/images/I/71vbHzVe9KL._AC_SL1500_.jpg',
+      image: 'https://m.media-amazon.com/images/I/61ZQ-K83GjL._AC_UF894,1000_QL80_.jpg',
       tags: ['Featured', 'New']
     },
     {
       title: 'Portable Cooling',
       description: 'Compact coolers and fans for any space',
-      image: 'https://m.media-amazon.com/images/I/61Z6OoiXcbL._SL1500_.jpg',
+      image: 'https://mustgrab.in/cdn/shop/files/71U98QDH3qS._SX679.jpg?v=1712916610',
       tags: ['Portable', 'Popular']
     }
   ];
 
-  const handleTabChange = (event, newValue) => {
-    setActiveTab(newValue);
-  };
+  const tabs = [
+    { icon: <Flame className="w-4 h-4 mr-1" />, label: 'Popular' },
+    { icon: <Sparkles className="w-4 h-4 mr-1" />, label: 'New Arrivals' },
+    { icon: <TrendingUp className="w-4 h-4 mr-1" />, label: 'Trending' }
+  ];
 
   return (
-    <Box sx={{ py: { xs: 4, md: 8 } }}>
-      <Container maxWidth="lg">
-        {/* Search Section */}
-        <Box sx={{ mb: 6 }}>
-          <Typography
-            variant="h4"
-            component="h1"
-            sx={{
-              textAlign: 'center',
-              fontWeight: 700,
-              mb: 4,
-              color: 'text.primary'
-            }}
-          >
-            Explore Products
-          </Typography>
+    <div className="py-8 md:py-16">
+      <div className="max-w-7xl mx-auto px-4">
+        {/* Heading */}
+        <div className="mb-12 text-center">
+          <h1 className="text-3xl font-bold text-gray-800">Explore Products</h1>
+        </div>
 
-          <Box sx={{ maxWidth: 600, mx: 'auto' }}>
-            <TextField
-              fullWidth
+        {/* Search Bar */}
+        <div className="max-w-xl mx-auto mb-12">
+          <div className="flex items-center border border-gray-300 rounded-lg bg-white px-4 py-2 shadow-sm">
+            <Search className="w-5 h-5 text-gray-400 mr-2" />
+            <input
+              type="text"
               placeholder="Search products, brands, and categories..."
-              variant="outlined"
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <SearchIcon color="action" />
-                  </InputAdornment>
-                ),
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <IconButton>
-                      <TuneIcon />
-                    </IconButton>
-                  </InputAdornment>
-                )
-              }}
-              sx={{
-                '& .MuiOutlinedInput-root': {
-                  borderRadius: 2,
-                  backgroundColor: 'background.paper'
-                }
-              }}
+              className="w-full outline-none text-sm"
             />
-          </Box>
-        </Box>
+            <button>
+              <Sliders className="w-5 h-5 text-gray-500" />
+            </button>
+          </div>
+        </div>
 
         {/* Trending Searches */}
-        <Box sx={{ mb: 6 }}>
-          <Typography variant="h6" sx={{ mb: 2, fontWeight: 600 }}>
-            Trending Searches
-          </Typography>
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+        <div className="mb-12">
+          <h2 className="text-lg font-semibold mb-3">Trending Searches</h2>
+          <div className="flex flex-wrap gap-2">
             {trendingSearches.map((search) => (
-              <Chip
+              <button
                 key={search}
-                label={search}
-                clickable
-                sx={{
-                  borderRadius: 2,
-                  '&:hover': {
-                    backgroundColor: 'primary.main',
-                    color: 'white'
-                  }
-                }}
-              />
+                className="px-3 py-1 bg-gray-100 rounded-full text-sm hover:bg-blue-600 hover:text-white transition"
+              >
+                {search}
+              </button>
             ))}
-          </Box>
-        </Box>
+          </div>
+        </div>
+
+        {/* Tabs */}
+        <div className="mb-8 overflow-x-auto">
+          <div className="flex gap-4 border-b">
+            {tabs.map((tab, index) => (
+              <button
+                key={index}
+                onClick={() => setActiveTab(index)}
+                className={`flex items-center px-4 py-2 text-sm font-medium ${
+                  activeTab === index
+                    ? 'border-b-2 border-blue-600 text-blue-600'
+                    : 'text-gray-500'
+                }`}
+              >
+                {tab.icon}
+                {tab.label}
+              </button>
+            ))}
+          </div>
+        </div>
 
         {/* Featured Collections */}
-        <Box sx={{ mb: 6 }}>
-          <Tabs
-            value={activeTab}
-            onChange={handleTabChange}
-            sx={{ mb: 4 }}
-            variant="scrollable"
-            scrollButtons="auto"
-          >
-            <Tab 
-              icon={<LocalFireDepartmentIcon />} 
-              label="Popular" 
-              iconPosition="start"
-            />
-            <Tab 
-              icon={<NewReleasesIcon />} 
-              label="New Arrivals" 
-              iconPosition="start"
-            />
-            <Tab 
-              icon={<TrendingUpIcon />} 
-              label="Trending" 
-              iconPosition="start"
-            />
-          </Tabs>
-
-          <Grid container spacing={3}>
-            {featuredCollections.map((collection) => (
-              <Grid item xs={12} sm={6} md={4} key={collection.title}>
-                <Card
-                  sx={{
-                    height: '100%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    transition: 'all 0.3s ease-in-out',
-                    '&:hover': {
-                      transform: 'translateY(-8px)',
-                      boxShadow: '0 12px 24px -4px rgba(0, 0, 0, 0.12)'
-                    }
-                  }}
-                >
-                  <Box
-                    sx={{
-                      pt: '56.25%',
-                      position: 'relative',
-                      '& img': {
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'cover'
-                      }
-                    }}
-                  >
-                    <img src={collection.image} alt={collection.title} />
-                  </Box>
-                  <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography variant="h6" gutterBottom>
-                      {collection.title}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary" paragraph>
-                      {collection.description}
-                    </Typography>
-                    <Box sx={{ display: 'flex', gap: 1 }}>
-                      {collection.tags.map((tag) => (
-                        <Chip
-                          key={tag}
-                          label={tag}
-                          size="small"
-                          sx={{
-                            backgroundColor: `${theme.palette.primary.main}15`,
-                            color: 'primary.main'
-                          }}
-                        />
-                      ))}
-                    </Box>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-      </Container>
-    </Box>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {featuredCollections.map((collection) => (
+            <div
+              key={collection.title}
+              className="bg-white rounded-xl shadow-md hover:-translate-y-2 hover:shadow-xl transition transform duration-300 flex flex-col"
+            >
+              <div className="relative pt-[56.25%]">
+                <img
+                  src={collection.image}
+                  alt={collection.title}
+                  className="absolute top-0 left-0 w-full h-full object-cover rounded-t-xl"
+                />
+              </div>
+              <div className="p-4 flex flex-col flex-grow">
+                <h3 className="text-lg font-semibold mb-1">
+                  {collection.title}
+                </h3>
+                <p className="text-sm text-gray-600 mb-3">
+                  {collection.description}
+                </p>
+                <div className="flex gap-2 mt-auto">
+                  {collection.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs bg-blue-100 text-blue-600 rounded-full px-2 py-0.5"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 };
 

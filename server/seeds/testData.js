@@ -52,9 +52,8 @@ const testData = {
             colorVariants: ['Mahogany', 'Classic White', 'Matte Black'],
             sizeVariants: ['48"', '52"', '56"'],
             images: [
-                'https://cdn.eleczo.com/media/catalog/product/cache/83d23ce331a5321aeadc67bc7dc0f5f6/h/a/havells-andria-ceiling-fan-1200mm-maroon.webp?auto=webp&format=pjpg&width=200&height=200&fit=cover',
-                'https://rukminim2.flixcart.com/image/416/416/xif0q/fan/m/n/f/-original-imagrdzfzxg4mhkg.jpeg?q=70',
-                'https://5.imimg.com/data5/SELLER/Default/2023/3/YW/OB/JZ/185152101/crompton-ceiling-fan.jpg'
+                '',
+             
             ],
             stock: 50
         },
@@ -65,9 +64,8 @@ const testData = {
             colorVariants: ['Pearl White', 'Silver'],
             sizeVariants: ['1.5 Ton'],
             images: [
-                'https://www.lg.com/in/images/split-ac/md07544944/gallery/PS-Q19ENZE-Split-AC-Front-View-D-01.jpg',
-                'https://www.lg.com/in/images/split-ac/md07544944/gallery/PS-Q19ENZE-Split-AC-Right-View-D-03.jpg',
-                'https://www.lg.com/in/images/split-ac/md07544944/gallery/PS-Q19ENZE-Split-AC-Remote-Control-D-02.jpg'
+                'https://store.in.panasonic.com/media/catalog/product/cache/40b589206cef99ab7dca1586fe425968/k/z/kz18akyf_baseimage_2510-updated.png',
+             
             ],
             stock: 30
         },
@@ -78,9 +76,9 @@ const testData = {
             colorVariants: ['Arctic White', 'Storm Grey'],
             sizeVariants: ['12L', '20L'],
             images: [
-                'https://5.imimg.com/data5/SELLER/Default/2021/12/VE/PH/SA/26489853/symphony-diet-12t-personal-tower-air-cooler-12-litres-with-i-pure-technology-white-1000x1000.jpg',
-                'https://5.imimg.com/data5/ANDROID/Default/2023/4/300632581/WU/YX/JE/184220450/product-jpeg.jpg',
-                'https://5.imimg.com/data5/SELLER/Default/2021/12/QI/FP/WC/26489853/symphony-diet-12t-personal-tower-air-cooler-12-litres.jpg'
+               'https://m.media-amazon.com/images/I/71yT7QkzcoL._AC_UF1000,1000_QL80_.jpg',
+                'https://m.media-amazon.com/images/I/41pyTu4mGjL._SX300_SY300_QL70_FMwebp_.jpg',
+                'https://m.media-amazon.com/images/I/71IlYQGAmXL._AC_UF1000,1000_QL80_.jpg'
             ],
             stock: 75
         },
@@ -91,9 +89,9 @@ const testData = {
             colorVariants: ['Jet Black', 'Snow White'],
             sizeVariants: ['36"', '42"'],
             images: [
-                'https://rukminim2.flixcart.com/image/850/1000/xif0q/fan/3/i/r/tornado-16-1-400-wall-fan-3-blade-wall-fan-black-almonard-original-imagpg9fhf3shxnz.jpeg',
-                'https://5.imimg.com/data5/SELLER/Default/2021/12/VE/PH/SA/26489853/symphony-sense-tower-fan.jpg',
-                'https://5.imimg.com/data5/SELLER/Default/2021/12/QI/FP/WC/26489853/symphony-sense-tower-fan-remote.jpg'
+                'https://m.media-amazon.com/images/I/71yT7QkzcoL._AC_UF1000,1000_QL80_.jpg',
+                'https://m.media-amazon.com/images/I/41pyTu4mGjL._SX300_SY300_QL70_FMwebp_.jpg',
+                'https://m.media-amazon.com/images/I/71IlYQGAmXL._AC_UF1000,1000_QL80_.jpg'
             ],
             stock: 60
         },
@@ -104,9 +102,9 @@ const testData = {
             colorVariants: ['Classic White'],
             sizeVariants: ['1 Ton'],
             images: [
-                'https://www.lg.com/in/images/window-ac/md05911439/gallery/JW-Q12WUZA-Window-AC-Front-View-D-01.jpg',
-                'https://www.lg.com/in/images/window-ac/md05911439/gallery/JW-Q12WUZA-Window-AC-Right-View-D-02.jpg',
-                'https://www.lg.com/in/images/window-ac/md05911439/gallery/JW-Q12WUZA-Window-AC-Remote-Control-D-03.jpg'
+                'https://m.media-amazon.com/images/I/71yT7QkzcoL._AC_UF1000,1000_QL80_.jpg',
+                'https://m.media-amazon.com/images/I/41pyTu4mGjL._SX300_SY300_QL70_FMwebp_.jpg',
+                'https://m.media-amazon.com/images/I/71IlYQGAmXL._AC_UF1000,1000_QL80_.jpg'
             ],
             stock: 40
         },
@@ -117,13 +115,14 @@ const testData = {
             colorVariants: ['Industrial Grey', 'Matte Black'],
             sizeVariants: ['24"', '30"'],
             images: [
-                'https://5.imimg.com/data5/SELLER/Default/2021/12/OI/OV/QG/52007302/pedestal-fan.jpg',
-                'https://5.imimg.com/data5/SELLER/Default/2022/9/VO/CX/VK/52007302/industrial-pedestal-fan.jpg',
-                'https://5.imimg.com/data5/SELLER/Default/2022/9/SX/UW/OT/52007302/industrial-fan-motor.jpg'
+                'https://m.media-amazon.com/images/I/71yT7QkzcoL._AC_UF1000,1000_QL80_.jpg',
+                'https://m.media-amazon.com/images/I/41pyTu4mGjL._SX300_SY300_QL70_FMwebp_.jpg',
+                'https://m.media-amazon.com/images/I/71IlYQGAmXL._AC_UF1000,1000_QL80_.jpg'
             ],
             stock: 45
         }
     ],
+    
     approvedEmails: [
         {
             email: 'newadmin@example.com',
